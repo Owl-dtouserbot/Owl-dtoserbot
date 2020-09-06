@@ -134,7 +134,7 @@ def upstream(ups):
                  f'{txt}\n`Heroku değişkenleri yanlış veya eksik tanımlanmış.`')
             repo.__del__()
             return
-        edit(ups, '`SedenBot Güncelleniyor..\
+        edit(ups, '`DtoBot Güncelleniyor..\
              \nBu işlem 1-2 dakika sürebilir, lütfen sabırla bekle. Beklemene değer :)`')
         ups_rem.fetch(ac_br)
         repo.git.reset('--hard', 'FETCH_HEAD')
@@ -150,16 +150,16 @@ def upstream(ups):
             edit(ups, f'{txt}\n`Karşılaşılan hatalar burada:\n{error}`')
             repo.__del__()
             return
-        edit(ups, '`Güncelleme başarıyla tamamlandı!\n'
-             'SedenBot yeniden başlatılıyor, sabırla beklediğin için teşekkür ederiz :)`')
+        edit(ups, '`Güncəllənmə müvəffəqiyyətlə tamamlandı!\n'
+             'DtoBot yeniden başladılır, səbirli olduğunuz üçün təşəkkürlər :)`')
     else:
         try:
             ups_rem.pull(ac_br)
         except GitCommandError:
             repo.git.reset('--hard', 'FETCH_HEAD')
         update_requirements()
-        edit(ups, '`Güncelleme başarıyla tamamlandı!\n'
-             'SedenBot yeniden başlatılıyor.`')
+        edit(ups, '`Güncəllənmə müvəffəqiyyətlə tamamlandı!\n'
+             'DtoBot yeniden başladılır.`')
 
     try:
         app.terminate()
