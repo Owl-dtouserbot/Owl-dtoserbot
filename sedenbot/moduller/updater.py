@@ -43,28 +43,28 @@ def update_requirements():
 
 @sedenify(pattern=r'^.update(?: |$)(.*)')
 def upstream(ups):
-    edit(ups, '`SedenBot için güncellemeler denetleniyor...`')
+    edit(ups, '`DtoBot için güncellemeler yoxlanır...`')
     conf = extract_args(ups)
     off_repo = REPO_URL
     force_update = False
 
     try:
-        txt = '`Güncelleme başarısız oldu!'
-        txt += 'Bazı sorunlarla karşılaştık.`\n\n**LOG:**\n'
+        txt = '`Güncelleme müvəffəqiyyətsiz oldu!'
+        txt += 'Bəzi problemlər yarandı.`\n\n**LOG:**\n'
         repo = Repo()
     except NoSuchPathError as error:
-        edit(ups, f'{txt}\n`{error} klasörü bulunamadı.`')
+        edit(ups, f'{txt}\n`{error} qovluq tapılmadı.`')
         repo.__del__()
         return
     except GitCommandError as error:
-        edit(ups, f'{txt}\n`Git hatası! {error}`')
+        edit(ups, f'{txt}\n`Git xətası! {error}`')
         repo.__del__()
         return
     except InvalidGitRepositoryError as error:
         if conf != 'now':
             edit(ups,
-                 f"`{error} klasörü bir git reposu gibi görünmüyor.\
-                 \nFakat bu sorunu .update now komutuyla botu zorla güncelleyerek çözebilirsin.`")
+                 f"`{error} Qovluq git reposu deyil.\
+                 \nAmma bu problemi .update now əmri ilə botu manuel olaraq güncəlləyərək həll edə bilərsiniz.`")
             return
         repo = Repo.init()
         origin = repo.create_remote('upstream', off_repo)
@@ -77,9 +77,9 @@ def upstream(ups):
     ac_br = repo.active_branch.name
     if ac_br != 'seden':
         edit(ups,
-             f'**[SedenBot Güncelleyici]:**` Galiba botunun branch ismini değiştirdin. Kullandığın branch ismi: ({ac_br}). '
-             'Böyle olursa botunu güncelleyemem. Çünkü branch ismi uyuşmuyor.. '
-             'Lütfen botunu SedenBot resmi repodan kullan.`')
+             f'**[DtoBot Güncelleyici]:**` botun branch sdını dəyişdirdin. İstifadə etdiyin branch adı: ({ac_br}). '
+             'bu halda botu güncəlləyə bilmərəm. Çünkü branch adı eyni deyil.. '
+             'Xahiş edirik botu rəsmi linkdən yükləyin.`')
         repo.__del__()
         return
 
@@ -95,7 +95,7 @@ def upstream(ups):
 
     if not changelog and not force_update:
         edit(ups,
-             f'\n`Botunuz` **ən son vesiyadadır!** `Branch:` **{ac_br}**\n')
+             f'\n`Botun` **tam güncəldir!** `Branch:` **{ac_br}**\n')
         repo.__del__()
         return
 
