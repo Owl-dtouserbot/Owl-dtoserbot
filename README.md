@@ -1,3 +1,4 @@
+DTÖ
 ![GitHub repo size](https://img.shields.io/github/repo-size/TeamDerUntergang/Telegram-SedenUserBot?color=Blue&label=Repo%20Boyutu)
 ![GitHub](https://img.shields.io/github/license/TeamDerUntergang/Telegram-SedenUserBot?color=Orange&label=L)
 ### Heroku Deploy
