@@ -24,11 +24,11 @@ def seden(message):
         if seden in KOMUT:
             edit(message, str(KOMUT[seden]))
         else:
-            edit(message, '**Lütfen bir Seden modülü adı belirtin.**')
+            edit(message, '**Zəhmət olmasa bir DTÖ modulu yazın.**')
     else:
         edit(message, '**Lütfen hangi Seden modülü için yardım istediğinizi belirtin !\
             \nKullanım:** `.seden <modül adı>`')
-        metin = f'**[Seden UserBot](https://t.me/{CHANNEL}) Yüklü Modüller:**\n'
+        metin = f'**[DTÖ UserBot](https://t.me/{CHANNEL}) Yüklü Modüller:**\n'
         for liste in KOMUT:
             metin += '- `' + str(liste)
             metin += '` \n'
