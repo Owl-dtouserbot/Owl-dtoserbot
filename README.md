@@ -7,10 +7,6 @@
 
 
 
-.
-
-
-
 
 ````markdown
 #include <std/disclaimer.h>
@@ -23,11 +19,6 @@ Botu telegramı daha rahat istifadə eləmək xaricində əylənmək üçün də
 Bu bot Türk userbot olan SedenUserbot əsaslıdır.Botun türkçə versiyasını istifadə etmək üçün [bura](https://github.com/TeamDerUntergang/Telegram-SedenUserBot) toxuna bilərsiniz.
 /**
 ````
-
-
-
-
-
 
 
 
