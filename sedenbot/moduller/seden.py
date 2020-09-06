@@ -17,18 +17,18 @@
 from sedenbot import KOMUT, CHANNEL
 from sedenecem.core import edit, reply, extract_args, sedenify
 
-@sedenify(pattern='^.seden')
-def seden(message):
-    seden = extract_args(message).lower()
+@sedenify(pattern='^.dto')
+def dto(message):
+    dto = extract_args(message).lower()
     if seden:
-        if seden in KOMUT:
-            edit(message, str(KOMUT[seden]))
+        if dto in KOMUT:
+            edit(message, str(KOMUT[dto]))
         else:
-            edit(message, '**Lütfen bir Seden modülü adı belirtin.**')
+            edit(message, '**Xahiş edirik bir bot modulu yazın.**')
     else:
-        edit(message, '**Lütfen hangi Seden modülü için yardım istediğinizi belirtin !\
-            \nKullanım:** `.seden <modül adı>`')
-        metin = f'**[Seden UserBot](https://t.me/{CHANNEL}) Yüklü Modüller:**\n'
+        edit(message, '**Xahiş edirik hansı bot modulu üçün məlumat almaq istədiyinizi yazın !\
+            \nKullanım:** `.dto <modül adı>`')
+        metin = f'**[Dto UserBot](https://t.me/{CHANNEL}) Yüklü Modullər:**\n'
         for liste in KOMUT:
             metin += '- `' + str(liste)
             metin += '` \n'
