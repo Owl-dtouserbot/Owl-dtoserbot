@@ -28,8 +28,8 @@ from dotenv import load_dotenv
 load_dotenv("config.env")
 
 if version_info[0] < 3 or version_info[1] < 8:
-    LOGS.warn("En az python 3.8 sürümüne sahip olmanız gerekir. "
-              "Birden fazla özellik buna bağlıdır. Bot kapatılıyor.")
+    LOGS.warn("En az python 3.8 versiyasına sahib olmalısınız. "
+              "Birdən çox özəllik buna bağlıdır. Bot söndürülür.")
     quit(1)
 
 KOMUT = {}
@@ -67,23 +67,23 @@ CONFIG_CHECK = environ.get(
     "___________LUTFEN_______BU_____SATIRI_____SILIN__________", None)
 
 if CONFIG_CHECK:
-    LOGS.warn("Lütfen ilk belirtilen satırı config.env dosyasından kaldırın")
+    LOGS.warn("zəhmət olmasa ilk sətri config.env faylından silin")
     quit(1)
 
 # Telegram APP ID ve HASH
 API_ID = environ.get("API_ID", None)
 if not API_ID:
-    LOGS.warn("API ID Ayarlanmadı. Lütfen config.env dosyasınız kontrol edin.")
+    LOGS.warn("API ID qeydə alına bilmədi. Zəhmət olmasa config.env faylını gözdən keçirin.")
     quit(1)
 
 API_HASH = environ.get("API_HASH", None)
 if not API_HASH:
-    LOGS.warn("API HASH Ayarlanmadı. Lütfen config.env dosyasınız kontrol edin.")
+    LOGS.warn("API HASH qeydə alına bilmədi. Zəhmət olmasa config.env faylını gözdən keçirin")
     quit(1)
 
 BOT_VERSION = "1.1 Beta"
-SUPPORT_GROUP = "SedenUserBotSupport"
-CHANNEL = "SedenUserBot"
+SUPPORT_GROUP = "DtoSupport"
+CHANNEL = "DtoUserBot"
 
 # Hava durumu varsayılan şehir
 WEATHER = environ.get("WEATHER", None)
