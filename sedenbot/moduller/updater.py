@@ -95,7 +95,7 @@ def upstream(ups):
 
     if not changelog and not force_update:
         edit(ups,
-             f'\n`Botun` **tamamen güncel!** `Branch:` **{ac_br}**\n')
+             f'\n`Botunuz` **ən son vesiyadadır!** `Branch:` **{ac_br}**\n')
         repo.__del__()
         return
 
